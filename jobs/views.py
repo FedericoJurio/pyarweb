@@ -1,14 +1,15 @@
 from community.views import FilterableList, OwnedObject
 from django.contrib.syndication.views import Feed
 from django.core.mail import EmailMessage
-from django.core.urlresolvers import reverse_lazy
 from django.utils.timezone import datetime, timedelta, utc
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from django.views.generic import ListView
+from django.core.urlresolvers import reverse_lazy
 from django.template.loader import render_to_string
-from .models import Job, JobInactivated
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.conf import settings
+
 from .forms import JobForm, JobInactivateForm
-from pyarweb.settings import DEFAULT_FROM_EMAIL
+from .models import Job, JobInactivated
 
 
 class JobActiveMixin(object):
