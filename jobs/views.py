@@ -1,13 +1,11 @@
-from datetime import datetime
-from datetime import timedelta
-
-from django.core.urlresolvers import reverse_lazy
-from django.views.generic.edit import UpdateView, CreateView, DeleteView
-from django.views.generic import ListView
+from community.views import FilterableList, OwnedObject
 from django.contrib.syndication.views import Feed
-from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
-from community.views import OwnedObject, FilterableList
+from django.core.urlresolvers import reverse_lazy
+from django.utils.timezone import datetime, timedelta, utc
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic import ListView
+from django.template.loader import render_to_string
 from .models import Job, JobInactivated
 from .forms import JobForm, JobInactivateForm
 from pyarweb.settings import DEFAULT_FROM_EMAIL
@@ -71,7 +69,7 @@ class JobList(ListView, JobActiveMixin, FilterableList):
     model = Job
     paginate_by = 20
     ordering = ['-created']
-    two_month_ago = datetime.today() - timedelta(days=60)
+    two_month_ago = datetime.now(tz=utc) - timedelta(days=60)
     # TODO: move to some dinamic configurable place
     COUNT_OF_SPONSORED = 3
 
