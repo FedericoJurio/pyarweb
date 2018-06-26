@@ -125,7 +125,7 @@ class JobInactivate(CreateView):
             email = EmailMessage(
                 subject="[PyAr] Aviso de trabajo dado de baja",
                 to=(job.company.owner.email, ),
-                from_email=DEFAULT_FROM_EMAIL,
+                from_email=getattr(settings, "DEFAULT_FROM_EMAIL"),
                 body=body
             )
             email.send()
