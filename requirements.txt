@@ -3,7 +3,7 @@ django-allauth==0.31.0
 django-autoslug==1.9.3
 django-braces==1.11.0
 django-bootstrap3==8.2.1
-django-bootstrap3-datetimepicker-2==2.6.0
+django-bootstrap3-datetimepicker==2.2.3
 django-bootstrap3==8.2.1
 django-braces==1.11.0
 django-crispy-forms==1.6.1
@@ -22,4 +22,3 @@ django-taggit-autosuggest==0.3.3
 django-taggit==0.22.0
 psycopg2-binary==2.7.4
 waliki==0.7
-
