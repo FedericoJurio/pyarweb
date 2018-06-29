@@ -22,3 +22,4 @@ django-taggit-autosuggest==0.3.3
 django-taggit==0.22.0
 psycopg2-binary==2.7.4
 waliki==0.7
+
