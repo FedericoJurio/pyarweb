@@ -33,7 +33,7 @@ class EventForm(CrispyFormMixin):
         label=_('Comienza'),
         widget=DateTimePicker(
             options={
-                "format": "DD/MM/YYYY HH:ss:mm"
+                "format": "DD/MM/YYYY HH:mm"
             }
         )
     )
@@ -44,7 +44,7 @@ class EventForm(CrispyFormMixin):
         label=_('Finaliza'),
         widget=DateTimePicker(
             options={
-                "format": "DD/MM/YYYY HH:ss:mm"
+                "format": "DD/MM/YYYY HH:mm"
             }
         )
     )
